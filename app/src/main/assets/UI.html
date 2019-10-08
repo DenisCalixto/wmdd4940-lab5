@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script defer>
+
+        var groups = ["clubs", "diamonds", "hearts", "spades"];
+        var faces = ["ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"];
+
+        function addNote(val) {
+            let index;
+            for (index = 0 ; index < val ; index++)
+            {
+                var elem = document.createElement("img");
+                var group = Math.floor(Math.random() * 4);
+                var face = Math.floor(Math.random() * 13);
+
+                elem.src = faces[face] + '_of_' + groups[group] + '.png';
+                document.getElementById("divCards").appendChild(elem);
+            }
+        }
+
+        function clearDiv() {
+            document.getElementById("divCards").innerHTML = "";
+        }
+
+    </script>
+    <style>
+        img {
+            width:10%;
+        }
+    </style>
+</head>
+<body>
+<!--<button id="button">-->
+<!--    Click me-->
+<!--</button>-->
+<div id='divCards'>
+
+</div>
+
+</body>
+</html>
